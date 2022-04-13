@@ -15,6 +15,12 @@ pipeline {
       }
     }
 
+    stage('Scan') {
+        steps {
+            snykSecurity organisation: 'josefranciscosanchezgutierrez', projectName: 'devSecOpsFrontend', severity: 'low', snykInstallation: 'Snyk', snykTokenId: 'snyk', targetFile: 'package.json'
+        }
+    }
+
     stage('Build image') {
       steps{
         script {

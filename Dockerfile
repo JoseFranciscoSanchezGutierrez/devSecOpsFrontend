@@ -12,7 +12,7 @@ RUN npm run build --prod
 
 CMD [ "npm", "start" ]
 
-FROM nginx:alpine
+FROM nginx:1.22.0-alpine
 
 COPY src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
 
